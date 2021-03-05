@@ -1,0 +1,15 @@
+version: '2'
+services:
+  simple-rest-api:
+    container_name: simple-rest-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: simple-rest-api:latest
+    ports:
+      - 9090:9090
+    networks:
+      - network-dev
+networks:
+  network-dev:
+    driver: bridge
